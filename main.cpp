@@ -66,10 +66,28 @@ int main(int argc,char* args[])
 		{
 			printf("%d",data.num);			
 		}
-		else
+		/*else if(BIGGER == priority(data.oper,stack.stackTop().oper))
 		{
-			stack.push(data);
-		}
+			switch(stack.stackTop().oper)
+			{
+			case ADD:
+				printf("+");
+				break;
+			case MINUS:
+				printf("-");
+				break;
+			case MUL:
+				printf("x");
+				break;
+			case DIV:
+				printf("/");
+				break;
+			}
+			//if(!stack.isEmpty()) stack.pop();
+		}else
+		{
+			//stack.push(data);
+		}*/
 	}
 return 0;
 }
