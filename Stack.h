@@ -9,6 +9,8 @@ enum ENUM_OPER
 	NONE
 };
 
+ENUM_OPER getOper(int i);
+
 typedef struct dataType{
 	int num;
 	ENUM_OPER oper;

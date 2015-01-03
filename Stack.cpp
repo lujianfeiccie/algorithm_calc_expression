@@ -1,6 +1,25 @@
 #include "Stack.h"
 #include <stdio.h>
 
+
+inline ENUM_OPER operator++(ENUM_OPER &rs, int )   
+{  
+    ENUM_OPER oldEnum = rs;  
+    rs = (ENUM_OPER)(rs + 1);  
+    return oldEnum;  
+}
+
+ENUM_OPER getOper(int i)
+{
+	for(ENUM_OPER begin = ADD;begin!=NONE;begin++)
+	{
+		if(i==begin)
+		{
+		return begin;
+		}
+	}
+}
+
 CStack::CStack(void)
 {
 	top = NULL;            //top=NULL±íÊ¾Á´Õ»Îª¿Õ  

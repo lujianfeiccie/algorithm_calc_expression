@@ -25,10 +25,23 @@ ENUM_PRIOR priority(ENUM_OPER oper1,ENUM_OPER oper2)//比较优先级
 
 int getNum(string str)
 {
+	int num = atoi(str.c_str());
+	for(int i=0;i<=9;i++)
+	{
+		if(i==num) return i;
+	}
 	return -1;
 }
 ENUM_OPER getOper(string str)
 {
+	string oper[]={"+","-","*","/"}; 
+	for(int i=0;i<4;i++)
+	{
+		if(strcmp(oper[i].c_str(),str.c_str())==0)
+		{
+			return getOper(i);
+		}
+	}
 	return ENUM_OPER::NONE;
 }
 int main(int argc,char* args[])
@@ -37,7 +50,7 @@ int main(int argc,char* args[])
 	str_list.push_back("1");
 	str_list.push_back("+");
 	str_list.push_back("2");
-	str_list.push_back("x");
+	str_list.push_back("*");
 	str_list.push_back("3");
 
 	CStack stack;
@@ -49,7 +62,14 @@ int main(int argc,char* args[])
 		data.num = getNum(*it);
 		data.oper = getOper(*it);
 
-		stack.push(data);
+		if(data.oper == NONE)
+		{
+			printf("%d",data.num);			
+		}
+		else
+		{
+			stack.push(data);
+		}
 	}
 return 0;
 }
