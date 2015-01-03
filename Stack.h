@@ -6,6 +6,8 @@ enum ENUM_OPER
 	MINUS,
 	MUL,
 	DIV,
+	OPEN_BRACKET,
+	CLOSE_BRACKET,
 	NONE
 };
 
